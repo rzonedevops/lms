@@ -1,0 +1,102 @@
+/* ==========================================================================
+   RegimA Zone Design System — brand theme layer for Frappe LMS (additive)
+   Source of truth: rzonedevops/rzodesys (see INTEGRATION.md there)
+
+   This layer brands the frappe-ui frontend with the RégimA Zone accent
+   colors and type families WITHOUT converting the whole app to the deep-navy
+   surface theme (too invasive for an upstream fork). It prefers re-pointing
+   frappe-ui CSS custom properties (--surface-*, --ink-*, --outline-*) and
+   falls back to narrowly-scoped overrides only where frappe-ui compiles a
+   literal hex with no variable behind it.
+
+   Canonical constants (declared in ./rzodesys-tokens.css):
+     primary action   #0066cc  --rz-blue-electric
+     hover/highlight  #00aaff  --rz-blue-sky
+     headings         Montserrat   body  Open Sans
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Links — frappe-ui resolves `text-ink-blue-link` through --ink-blue-link.
+   The brand defines a single theme, so the light and dark scopes get the
+   same Sky Blue (these later, equal-specificity selectors win the cascade
+   over frappe-ui's [data-theme="dark"] re-definition).
+   -------------------------------------------------------------------------- */
+:root,
+[data-theme='light'],
+[data-theme='dark'] {
+	--ink-blue-link: var(--rz-blue-sky);
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography — Open Sans for body copy (Inter kept as fallback),
+   Montserrat for headings. The families load from Google Fonts via <link>
+   tags in frontend/index.html. frappe-ui sets `html { font-family: Inter
+   ... }` in the Tailwind base layer; this later rule of equal specificity
+   wins the cascade.
+   -------------------------------------------------------------------------- */
+html {
+	font-family: 'Open Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--rz-font-heading, 'Montserrat', sans-serif);
+}
+
+/* --------------------------------------------------------------------------
+   3. Primary actions — frappe-ui <Button variant="solid"> (default "gray"
+   theme) paints with --surface-gray-7 / -6 / -5. Re-pointing those variables
+   on the button itself turns exactly the solid buttons Electric Blue with a
+   Sky Blue hover, without touching any other --surface-gray consumer.
+   -------------------------------------------------------------------------- */
+button.bg-surface-gray-7,
+a.bg-surface-gray-7 {
+	--surface-gray-7: var(--rz-blue-electric); /* resting */
+	--surface-gray-6: var(--rz-blue-sky); /* hover */
+	--surface-gray-5: var(--rz-blue-electric); /* active */
+}
+
+/* Solid "blue" theme buttons compile to a literal hex (bg-blue-500) — no
+   variable exists there, so set the background on the button itself; its
+   hover state resolves through --surface-blue-3, which is re-pointed to
+   Sky Blue in the same scope. */
+button.bg-blue-500,
+a.bg-blue-500 {
+	background-color: var(--rz-blue-electric);
+	--surface-blue-3: var(--rz-blue-sky);
+}
+
+/* --------------------------------------------------------------------------
+   4. Focus rings — Sky Blue. Gray-theme buttons and form controls take
+   their ring color from --outline-gray-3; scoping the override to the
+   focused element leaves gray borders elsewhere untouched.
+   -------------------------------------------------------------------------- */
+button:focus-visible,
+a:focus-visible,
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.form-select:focus-visible,
+.form-checkbox:focus-visible {
+	--outline-gray-3: var(--rz-blue-sky);
+}
+
+/* Blue-theme buttons ring with a literal hex (ring-blue-400) — no variable
+   exists, so re-point Tailwind's own ring-color variable on focus. The
+   element scope keeps this one specificity step above the Tailwind utility,
+   which is emitted later in the bundle. */
+button.focus-visible\:ring-blue-400:focus-visible,
+a.focus-visible\:ring-blue-400:focus-visible {
+	--tw-ring-color: var(--rz-blue-sky);
+}
+
+/* --------------------------------------------------------------------------
+   5. Checkboxes — frappe-ui's .form-checkbox derives its checked color from
+   --ink-blue-2 (text-ink-blue-2 + currentColor). Scoped to the control.
+   -------------------------------------------------------------------------- */
+.form-checkbox {
+	--ink-blue-2: var(--rz-blue-electric);
+}
