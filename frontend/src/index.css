@@ -1,3 +1,8 @@
 @import './assets/Inter/inter.css';
 @import 'frappe-ui/src/style.css';
 @import './styles/codemirror.css';
+/* RegimA Zone Design System (rzonedevops/rzodesys): canonical tokens +
+   additive brand layer. Order matters — tokens first, theme layer last so
+   its overrides win the cascade against frappe-ui's base styles. */
+@import './styles/rzodesys-tokens.css';
+@import './styles/rzodesys-theme.css';

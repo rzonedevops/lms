@@ -1,0 +1,103 @@
+/* ==========================================================================
+   RegimA Zone Design System — canonical design tokens (tokens only)
+   Source of truth: rzonedevops/rzodesys
+   Upstream origin: themes/bigpoint/css/custom.css (RegimA-Zone/regimazone)
+   "REGIMA ZONE — UNIFIED BRAND THEME v2.0"
+
+   This file is safe to import into any app (Tailwind, shadcn, Vue, plain
+   CSS): it declares custom properties only — no element styles, no resets.
+   For the full sheet with base styles and rz-* component classes, use
+   dist/rzodesys.css instead.
+   ========================================================================== */
+
+/* Fonts (Montserrat + Open Sans) load via <link> tags in frontend/index.html;
+   the upstream Google Fonts @import was removed from this vendored copy. */
+
+:root {
+  /* Base palette */
+  --rz-bg-primary:       #00082c;  /* Deep Navy — page background */
+  --rz-bg-secondary:     #001236;  /* Dark Navy — cards */
+  --rz-bg-surface:       #001a4a;  /* Navy Surface — inputs, nested cards */
+  --rz-bg-accent:        #00245e;  /* Navy Accent — gradients, emphasis */
+  --rz-blue-electric:    #0066cc;  /* Electric Blue — primary actions */
+  --rz-blue-sky:         #00aaff;  /* Sky Blue — highlights, links, labels */
+  --rz-blue-glow:        #4db8ff;  /* Glow Blue — link hover */
+  --rz-blue-royal:       #2b3c99;  /* Royal Blue — legacy print/logo background */
+  --rz-white:            #ffffff;
+  --rz-text-primary:     #e8eaf0;  /* Off-white body text */
+  --rz-text-muted:       #99a8c0;  /* Muted secondary text */
+  --rz-text-faint:       #4a5a78;  /* Placeholder / section labels on nav */
+  --rz-text-dark:        #262f3a;  /* Dark text for light backgrounds */
+  --rz-border:           rgba(255,255,255,0.12);
+  --rz-border-subtle:    rgba(255,255,255,0.08);
+  --rz-border-accent:    rgba(0,170,255,0.3);
+
+  /* Semantic aliases */
+  --surface-page:        var(--rz-bg-primary);
+  --surface-card:        var(--rz-bg-secondary);
+  --surface-raised:      var(--rz-bg-surface);
+  --text-heading:        var(--rz-white);
+  --text-body:           var(--rz-text-primary);
+  --text-muted:          var(--rz-text-muted);
+  --accent-primary:      var(--rz-blue-electric);
+  --accent-highlight:    var(--rz-blue-sky);
+  --gradient-accent:     linear-gradient(90deg, #0066cc, #00aaff);
+  --gradient-panel:      linear-gradient(135deg, #001a4a 0%, #00245e 100%);
+  --gradient-banner:     linear-gradient(135deg, #001236 0%, #00245e 100%);
+
+  /* Typography */
+  --rz-font-heading: 'Montserrat', sans-serif;
+  --rz-font-body:    'Open Sans', sans-serif;
+  --text-hero:      clamp(28px, 4vw, 48px);
+  --text-h1:        clamp(32px, 5vw, 56px);
+  --text-h2:        clamp(24px, 3.5vw, 36px);
+  --text-h3:        clamp(20px, 2.5vw, 28px);
+  --text-h4:        clamp(18px, 2vw, 22px);
+  --text-section:   20px;
+  --text-body-size: 16px;
+  --text-small:     14px;
+  --text-caption:   13px;
+  --text-nav:       13px;
+  --text-label:     11px;
+  --text-microlabel:10px;
+  --weight-hero:    800;
+  --weight-heading: 700;
+  --weight-subhead: 600;
+  --weight-label:   700;
+  --weight-body:    400;
+  --tracking-tight:   -0.02em;
+  --tracking-heading: -0.01em;
+  --tracking-nav:     0.08em;
+  --tracking-label:   0.12em;
+  --tracking-eyebrow: 0.18em;
+  --leading-heading: 1.2;
+  --leading-hero:    1.1;
+  --leading-body:    1.65;
+  --leading-relaxed: 1.7;
+
+  /* Spacing scale */
+  --rz-space-xs: 8px;
+  --rz-space-sm: 16px;
+  --rz-space-md: 32px;
+  --rz-space-lg: 64px;
+  --rz-space-xl: 96px;
+
+  /* Radii */
+  --rz-radius-sm: 4px;   /* filter chips */
+  --rz-radius-md: 8px;   /* buttons, inputs */
+  --rz-radius-lg: 16px;  /* portal frames */
+  --rz-radius-card: 12px;
+  --rz-radius-tile: 10px;
+
+  /* Shadows */
+  --rz-shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+  --rz-shadow-glow: 0 0 24px rgba(0,170,255,0.15);
+  --rz-shadow-btn-glow: 0 0 20px rgba(0,170,255,0.35);
+  --rz-shadow-header: 0 2px 16px rgba(0,0,0,0.5);
+
+  /* Focus ring */
+  --rz-focus-ring: 0 0 0 3px rgba(0,170,255,0.15);
+
+  /* Content widths */
+  --rz-width-portal: 1080px;
+}
