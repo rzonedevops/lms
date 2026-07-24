@@ -47,5 +47,12 @@
   "doctype": "LMS Category",
   "modified": "2023-06-15 18:01:41.598282",
   "name": "Framework"
+ },
+ {
+  "category": "Skincare",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-07-24 11:39:38.577000",
+  "name": "Skincare"
  }
 ]
