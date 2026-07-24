@@ -1,0 +1,26 @@
+[
+ {
+  "doctype": "Course Chapter",
+  "name": "0001-zone-training",
+  "title": "Zone Training",
+  "course": "regima-manual-2020",
+  "docstatus": 0,
+  "modified": "2026-07-24 11:39:38.577000"
+ },
+ {
+  "doctype": "Course Chapter",
+  "name": "0002-spazone-training",
+  "title": "SpaZone Training",
+  "course": "regima-manual-2020",
+  "docstatus": 0,
+  "modified": "2026-07-24 11:39:38.577000"
+ },
+ {
+  "doctype": "Course Chapter",
+  "name": "0003-spazone-home-care-pampering",
+  "title": "SpaZone Home Care Pampering",
+  "course": "regima-manual-2020",
+  "docstatus": 0,
+  "modified": "2026-07-24 11:39:38.577000"
+ }
+]

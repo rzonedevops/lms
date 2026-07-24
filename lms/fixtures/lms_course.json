@@ -1,0 +1,16 @@
+[
+ {
+  "doctype": "LMS Course",
+  "name": "regima-manual-2020",
+  "title": "RégimA Manual 2020",
+  "short_introduction": "Complete training guide covering the RégimA Zone concept, product knowledge, and skincare expertise for professional aestheticians.",
+  "description": "<h2>RégimA Manual 2020 - Source Guide</h2><p>This comprehensive training curriculum covers the RégimA Zone concept and product line, providing in-depth knowledge of advanced skincare formulations and their applications.</p><h3>The RégimA Zone Concept</h3><p>The core concept of the Zone range is based on 3 spheres of influence:</p><ul><li><strong>Anti-inflammatory</strong> - Reducing the pro-inflammatory response and damage caused by inflammation</li><li><strong>Anti-oxidants</strong> - Fighting free-radical species and preventing oxidation that triggers cell damage</li><li><strong>Rejuvenation</strong> - Overall restructuring of the skin to produce healthy cell development</li></ul><p>The 2 main causes of skin ageing and ageing diseases are inflammation ('the silent killer') and free radical damage. Zone products address individual skin issues with active ingredients targeting each contributing factor at maximum clinically effective concentrations.</p>",
+  "category": "Skincare",
+  "status": "Approved",
+  "published": 1,
+  "published_on": "2026-07-24",
+  "featured": 1,
+  "docstatus": 0,
+  "modified": "2026-07-24 11:39:38.577000"
+ }
+]
